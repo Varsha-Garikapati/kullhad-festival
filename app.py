@@ -46,7 +46,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Detect which section to show based on URL param
-query_params = st.experimental_get_query_params()
+query_params = st.query_params
 section = query_params.get("section", ["home"])[0]
 
 # Hero section (still at top)
