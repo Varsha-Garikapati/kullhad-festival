@@ -205,14 +205,16 @@ elif section == "features":
     with st.expander("🎤 Dignitaries and Guests"):
         st.write("National icons from ecology, innovation, and culture.")
 
-# ---------------- FOOTER ----------------
-st.markdown("---")
-st.subheader("Why IIT Mandi?")
-st.write("""
-IIT Mandi lies at a unique confluence of culture, consciousness, and capability...
-""")
+# ---------------- FOOTER (Only on Home Page) ----------------
+if section == "home":
+    st.markdown("---")
+    st.subheader("Why IIT Mandi?")
+    st.write("""
+    IIT Mandi lies at a unique confluence of culture, consciousness, and capability...
+    """)
 
-st.subheader("💬 Share your thoughts")
-review = st.text_area("Leave a review or message:")
-if st.button("Submit Review"):
-    st.success("✅ Thank you for your feedback!")
+    st.subheader("💬 Share your thoughts")
+    review = st.text_area("Leave a review or message:")
+    if st.button("Submit Review"):
+        st.success("✅ Thank you for your feedback!")
+
