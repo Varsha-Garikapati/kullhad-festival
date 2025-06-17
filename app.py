@@ -119,46 +119,61 @@ if section == "home":
     </div>
     """, unsafe_allow_html=True)
 
-    # Overview
+    # Overview Section as Cards
     st.markdown("<h2 id='overview' style='text-align: center; margin-top:4rem;'>📖 Festival Overview</h2>", unsafe_allow_html=True)
-    st.write("""
-    The Kullhad Economy Festival (KEF) is envisioned as a landmark 1.5-day event celebrating grassroots entrepreneurship, indigenous innovation, sustainable production, and cultural heritage in alignment with the philosophy of the Kullhad Economy.
-
-    Rooted in the spirit of **ātmanirbharta (self-reliance)** and drawing inspiration from timeless Indic civilisational values, KEF marks a conscious transition from marketing-driven, consumption-heavy models to **production-centric, dignity-first economic systems**.
-
-    KEF is not just a festival — it is a **model in motion**. Focused on a 10 km radius around the Kamand Valley, the festival will bring together **artisans, farmers, innovators, students, teachers, performers, and policymakers** to create an immersive, participatory experience that celebrates being local while thinking cosmic — or what we call the **glocal dharma of development**.
-
-    The event will begin with an auspicious **Maha Chandi Homa** on **Vijaya Dashami (Oct 2nd, 2025)** and continue through Oct 4–5, 2025.
-    """)
+    st.markdown("""
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🧱</div>
+            <div class="feature-title">Model in Motion</div>
+            <div class="feature-text">KEF is not just a festival — it is a living ecosystem of local innovation and dignity-first economy.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <div class="feature-title">Think Glocal</div>
+            <div class="feature-text">Celebrating local roots while embracing global consciousness — the glocal dharma of development.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-title">Inclusive Participation</div>
+            <div class="feature-text">Involving artisans, students, farmers, teachers, innovators, and policy-makers in one immersive experience.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔥</div>
+            <div class="feature-title">Cultural Spark</div>
+            <div class="feature-text">Begins with the sacred Maha Chandi Homa on Vijaya Dashami to ground the festival in spiritual energy.</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     # Objectives Section
-    st.markdown("<h2 id='overview' style='text-align: center; margin-top:4rem;'>📖 Festival Overview</h2>", unsafe_allow_html=True)
+    st.markdown("<div class='section-spacer'></div>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>🌟 Festival Objectives</h2>", unsafe_allow_html=True)
 
-st.markdown("""
-<div class="feature-grid">
-    <div class="feature-card">
-        <div class="feature-icon">🧱</div>
-        <div class="feature-title">Model in Motion</div>
-        <div class="feature-text">KEF is not just a festival — it is a living ecosystem of local innovation and dignity-first economy.</div>
+    st.markdown("""
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🌿</div>
+            <div class="feature-title">Promote Philosophy</div>
+            <div class="feature-text">Celebrate the core spirit and practice of the Kullhad Economy.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-title">Empower Communities</div>
+            <div class="feature-text">Showcase entrepreneurs, SHGs, and artisans driving local change.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <div class="feature-title">Connect Tradition & Tech</div>
+            <div class="feature-text">Inspire innovation rooted in Indic values and sustainability.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📢</div>
+            <div class="feature-title">Amplify Voices</div>
+            <div class="feature-text">Highlight regional changemakers and place-based impact stories.</div>
+        </div>
     </div>
-    <div class="feature-card">
-        <div class="feature-icon">🌍</div>
-        <div class="feature-title">Think Glocal</div>
-        <div class="feature-text">Celebrating local roots while embracing global consciousness — the glocal dharma of development.</div>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">🤝</div>
-        <div class="feature-title">Inclusive Participation</div>
-        <div class="feature-text">Involving artisans, students, farmers, teachers, innovators, and policy-makers in one immersive experience.</div>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">🔥</div>
-        <div class="feature-title">Cultural Spark</div>
-        <div class="feature-text">Begins with the sacred Maha Chandi Homa on Vijaya Dashami to ground the festival in spiritual energy.</div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
+    """, unsafe_allow_html=True)
 
 # ---------------- ORGANISING STRUCTURE ----------------
 elif section == "organising":
