@@ -54,6 +54,73 @@ if section == "home":
     st.markdown("# 🌾 KULLHAD ECONOMY FESTIVAL")
     st.markdown("### Reclaiming Roots, Reinventing Futures")
 
+# ------------------- OBJECTIVES GRID -------------------
+st.markdown("""
+    <style>
+    .feature-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+    .feature-card {
+        background-color: #1f2937;
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        width: 250px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+    }
+    .feature-card:hover {
+        transform: scale(1.05);
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+        color: #fbbf24;
+        margin-bottom: 1rem;
+    }
+    .feature-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .feature-text {
+        font-size: 0.95rem;
+        color: #d1d5db;
+    }
+    </style>
+
+    <h2 style='text-align: center;'>🌟 Festival Objectives</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🌿</div>
+            <div class="feature-title">Promote Philosophy</div>
+            <div class="feature-text">Celebrate the core spirit and practice of the Kullhad Economy.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-title">Empower Communities</div>
+            <div class="feature-text">Showcase entrepreneurs, SHGs, and artisans driving local change.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <div class="feature-title">Connect Tradition & Tech</div>
+            <div class="feature-text">Inspire innovation rooted in Indic values and sustainability.</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📢</div>
+            <div class="feature-title">Amplify Voices</div>
+            <div class="feature-text">Highlight regional changemakers and place-based impact stories.</div>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
+
+
 # ABOUT SECTION
 if section == "about":
     st.header("About the Festival")
