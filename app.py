@@ -152,17 +152,17 @@ st.markdown("""
 
 # ABOUT SECTION
 if section == "about":
-    st.header("About the Festival")
+    st.header("📖 Overview")
     st.write("""
-    The Kullhad Economy Festival (KEF) is envisioned as a landmark 1.5-day event celebrating grassroots entrepreneurship, indigenous innovation, sustainable production, and cultural heritage...
+    The Kullhad Economy Festival (KEF) is envisioned as a landmark 1.5-day event celebrating grassroots entrepreneurship, indigenous innovation, sustainable production, and cultural heritage in alignment with the philosophy of the Kullhad Economy.
+
+    Rooted in the spirit of **ātmanirbharta (self-reliance)** and drawing inspiration from timeless Indic civilisational values, KEF marks a conscious transition from marketing-driven, consumption-heavy models to **production-centric, dignity-first economic systems**.
+
+    KEF is not just a festival — it is a **model in motion**. Focused on a 10 km radius around the Kamand Valley, the festival will bring together **artisans, farmers, innovators, students, teachers, performers, and policymakers** to create an immersive, participatory experience that celebrates being local while thinking cosmic — or what we call the **glocal dharma of development**.
+
+    The event will begin with an auspicious **Maha Chandi Homa** on **Vijaya Dashami (Oct 2nd, 2025)** and continue through Oct 4–5, 2025.
     """)
-    st.subheader("Objectives")
-    st.markdown("""
-    - Promote the core philosophy of the Kullhad Economy  
-    - Provide a platform for community entrepreneurship  
-    - Reconnect students with tradition and sustainability  
-    - Amplify rural voices and craft-based models  
-    """)
+
 
 # ORGANISING STRUCTURE
 elif section == "organising":
