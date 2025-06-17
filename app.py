@@ -52,3 +52,22 @@ elif page == "Key Features":
         st.write("5,000+ locals, including students, SHGs, panchayats, and more.")
     with st.expander("🎤 Dignitaries and Special Guests"):
         st.write("Notable figures from sustainability, traditional knowledge, and policy.")
+
+# Divider
+st.markdown("---")
+
+# Why IIT Mandi?
+st.subheader("🏔️ Why IIT Mandi?")
+st.write("""
+IIT Mandi lies at a unique confluence of culture, consciousness, and capability. Nestled in the heart of Himachal — in Mandi (Chhoti Kāśī), at the feet of Parāśara Muni, the sage who gave us the Viṣṇu Purāṇa — the institute offers an ideal setting to reclaim indigenous production systems and embed them within futuristic design frameworks.
+
+The Kullhad Economy Festival reflects IIT Mandi’s deeper commitment — not merely to be a centre of knowledge, but to serve as a civilisational catalyst, shaping India’s economic and ecological future from the roots upward.
+""")
+
+# Visitor Review Section
+st.subheader("💬 Share your thoughts")
+review = st.text_area("Leave a review or message:")
+
+if st.button("Submit Review"):
+    st.success("✅ Thank you for your feedback!")
+
