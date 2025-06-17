@@ -1,57 +1,44 @@
 import streamlit as st
 
-# Page config
+# Set page config
 st.set_page_config(page_title="Kullhad Economy Festival", layout="wide")
 
-# Custom styling for top navbar
-st.markdown("""
-<style>
-    body {
-        font-family: 'Segoe UI', sans-serif;
-    }
-    .top-nav {
-        background-color: #111827;
-        padding: 1rem 2rem;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 8px;
-        margin-bottom: 2rem;
-    }
-    .nav-logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-    .nav-links a {
-        margin: 0 1.2rem;
-        color: #fbbf24;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1rem;
-    }
-    .nav-links a:hover {
-        text-decoration: underline;
-    }
-</style>
-
-<div class="top-nav">
-    <div class="nav-logo">KULLHAD FESTIVAL</div>
-    <div class="nav-links">
-        <a href="?section=about">About</a>
-        <a href="?section=organising">Organising Structure</a>
-        <a href="?section=features">Key Features</a>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# Detect which section to show based on URL param
+# Extract URL query parameters
 query_params = st.query_params
 section = query_params.get("section", ["home"])[0]
+scroll = query_params.get("scroll", [""])[0]
 
-# ----------- HERO SECTION (Centered) -----------
+# ---------------- STYLES ----------------
 st.markdown("""
 <style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.top-nav {
+    background-color: #111827;
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.nav-links a {
+    margin: 0 1.2rem;
+    color: #fbbf24;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
 .hero-container {
     text-align: center;
     padding-top: 4rem;
@@ -72,59 +59,83 @@ st.markdown("""
     margin-top: 4rem;
     margin-bottom: 2rem;
 }
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.feature-card {
+    background-color: #1f2937;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+.feature-card:hover {
+    transform: scale(1.05);
+}
+.feature-icon {
+    font-size: 2.5rem;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+}
+.feature-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.feature-text {
+    font-size: 0.95rem;
+    color: #d1d5db;
+}
 </style>
-
-<div class="hero-container">
-    <div class="hero-title">🌾 KULLHAD ECONOMY FESTIVAL</div>
-    <div class="hero-subtitle">Reclaiming Roots, Reinventing Futures</div>
-</div>
-
-<div class="section-spacer"></div>
 """, unsafe_allow_html=True)
 
-
-# ------------------- OBJECTIVES GRID -------------------
+# ---------------- NAVBAR ----------------
 st.markdown("""
-    <style>
-    .feature-grid {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-    }
-    .feature-card {
-        background-color: #1f2937;
-        color: white;
-        padding: 2rem;
-        border-radius: 12px;
-        width: 250px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-        text-align: center;
-        transition: transform 0.2s ease-in-out;
-    }
-    .feature-card:hover {
-        transform: scale(1.05);
-    }
-    .feature-icon {
-        font-size: 2.5rem;
-        color: #fbbf24;
-        margin-bottom: 1rem;
-    }
-    .feature-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-    .feature-text {
-        font-size: 0.95rem;
-        color: #d1d5db;
-    }
-    </style>
+<div class="top-nav">
+    <div class="nav-logo">KULLHAD FESTIVAL</div>
+    <div class="nav-links">
+        <a href="/?section=home&scroll=overview">About</a>
+        <a href="/?section=organising">Organising Structure</a>
+        <a href="/?section=features">Key Features</a>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
-    <h2 style='text-align: center;'>🌟 Festival Objectives</h2>
+# ---------------- HOME PAGE ----------------
+if section == "home":
 
+    st.markdown("""
+    <div class="hero-container">
+        <div class="hero-title">🌾 KULLHAD ECONOMY FESTIVAL</div>
+        <div class="hero-subtitle">Reclaiming Roots, Reinventing Futures</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Overview
+    st.markdown("<h2 id='overview' style='text-align: center; margin-top:4rem;'>📖 Festival Overview</h2>", unsafe_allow_html=True)
+    st.write("""
+    The Kullhad Economy Festival (KEF) is envisioned as a landmark 1.5-day event celebrating grassroots entrepreneurship, indigenous innovation, sustainable production, and cultural heritage in alignment with the philosophy of the Kullhad Economy.
+
+    Rooted in the spirit of **ātmanirbharta (self-reliance)** and drawing inspiration from timeless Indic civilisational values, KEF marks a conscious transition from marketing-driven, consumption-heavy models to **production-centric, dignity-first economic systems**.
+
+    KEF is not just a festival — it is a **model in motion**. Focused on a 10 km radius around the Kamand Valley, the festival will bring together **artisans, farmers, innovators, students, teachers, performers, and policymakers** to create an immersive, participatory experience that celebrates being local while thinking cosmic — or what we call the **glocal dharma of development**.
+
+    The event will begin with an auspicious **Maha Chandi Homa** on **Vijaya Dashami (Oct 2nd, 2025)** and continue through Oct 4–5, 2025.
+    """)
+
+    # Objectives Section
+    st.markdown("<div class='section-spacer'></div>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>🌟 Festival Objectives</h2>", unsafe_allow_html=True)
+
+    st.markdown("""
     <div class="feature-grid">
         <div class="feature-card">
             <div class="feature-icon">🌿</div>
@@ -147,24 +158,9 @@ st.markdown("""
             <div class="feature-text">Highlight regional changemakers and place-based impact stories.</div>
         </div>
     </div>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-
-# ABOUT SECTION
-if section == "about":
-    st.header("📖 Overview")
-    st.write("""
-    The Kullhad Economy Festival (KEF) is envisioned as a landmark 1.5-day event celebrating grassroots entrepreneurship, indigenous innovation, sustainable production, and cultural heritage in alignment with the philosophy of the Kullhad Economy.
-
-    Rooted in the spirit of **ātmanirbharta (self-reliance)** and drawing inspiration from timeless Indic civilisational values, KEF marks a conscious transition from marketing-driven, consumption-heavy models to **production-centric, dignity-first economic systems**.
-
-    KEF is not just a festival — it is a **model in motion**. Focused on a 10 km radius around the Kamand Valley, the festival will bring together **artisans, farmers, innovators, students, teachers, performers, and policymakers** to create an immersive, participatory experience that celebrates being local while thinking cosmic — or what we call the **glocal dharma of development**.
-
-    The event will begin with an auspicious **Maha Chandi Homa** on **Vijaya Dashami (Oct 2nd, 2025)** and continue through Oct 4–5, 2025.
-    """)
-
-
-# ORGANISING STRUCTURE
+# ---------------- ORGANISING STRUCTURE ----------------
 elif section == "organising":
     st.header("Organising Committee")
     st.markdown("""
@@ -180,7 +176,7 @@ elif section == "organising":
     - Prof. Gautam Desiraju  
     """)
 
-# KEY FEATURES
+# ---------------- KEY FEATURES ----------------
 elif section == "features":
     st.header("Festival Highlights")
     with st.expander("🎪 Marketplace Stalls"):
@@ -194,7 +190,7 @@ elif section == "features":
     with st.expander("🎤 Dignitaries and Guests"):
         st.write("National icons from ecology, innovation, and culture.")
 
-# Footer
+# ---------------- FOOTER ----------------
 st.markdown("---")
 st.subheader("Why IIT Mandi?")
 st.write("""
