@@ -183,7 +183,7 @@ if section == "home":
     heart	of	Himachal	—	in	Mandi	(Chhoti	Kāśī),	at	the	feet	of	Parāśara	Muni,	the	sage	who	gave	
     us	the	Viṣṇu	Purāṇa	and	the	Bṛhat	Parāśara	Horā	Śāstra	—	the	institute	offers	an	ideal	
     setting	to	reclaim	indigenous	production	systems	and	embed	them	within	futuristic	design	
-    frameworks.	
+    frameworks.
     The	Kullhad	Economy	Festival	relects	IIT	Mandi’s	deeper	commitment	—	not	merely	to	be	a	
     centre	of	knowledge,	but	to	serve	as	a	civilisational	catalyst,	shaping	India’s	economic	and	
     ecological	future	from	the	roots	upward
