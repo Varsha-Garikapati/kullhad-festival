@@ -49,10 +49,39 @@ st.markdown("""
 query_params = st.query_params
 section = query_params.get("section", ["home"])[0]
 
-# Hero section (still at top)
-if section == "home":
-    st.markdown("# 🌾 KULLHAD ECONOMY FESTIVAL")
-    st.markdown("### Reclaiming Roots, Reinventing Futures")
+# ----------- HERO SECTION (Centered) -----------
+st.markdown("""
+<style>
+.hero-container {
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4b5563;
+}
+.section-spacer {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+</style>
+
+<div class="hero-container">
+    <div class="hero-title">🌾 KULLHAD ECONOMY FESTIVAL</div>
+    <div class="hero-subtitle">Reclaiming Roots, Reinventing Futures</div>
+</div>
+
+<div class="section-spacer"></div>
+""", unsafe_allow_html=True)
+
 
 # ------------------- OBJECTIVES GRID -------------------
 st.markdown("""
