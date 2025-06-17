@@ -1,65 +1,60 @@
 import streamlit as st
 
-# Custom page config
-st.set_page_config(
-    page_title="Kullhad Economy Festival",
-    layout="wide"
-)
+# Page config
+st.set_page_config(page_title="Kullhad Economy Festival", layout="wide")
 
-# Custom CSS for clean styling (like margamai.com)
+# Custom styling for top navbar
 st.markdown("""
-    <style>
-        body {
-            background-color: #fff;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        .main-title {
-            font-size: 4em;
-            font-weight: 700;
-            margin-top: 1.5em;
-            margin-bottom: 0.2em;
-            text-align: center;
-        }
-        .subtitle {
-            font-size: 1.5em;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 3em;
-            color: #444;
-        }
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5em;
-            margin-top: 1em;
-        }
-        .footer {
-            margin-top: 4em;
-            padding-top: 2em;
-            border-top: 1px solid #ccc;
-            text-align: center;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .top-nav {
+        background-color: #111827;
+        padding: 1rem 2rem;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+    .nav-logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .nav-links a {
+        margin: 0 1.2rem;
+        color: #fbbf24;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="top-nav">
+    <div class="nav-logo">KULLHAD FESTIVAL</div>
+    <div class="nav-links">
+        <a href="?section=about">About</a>
+        <a href="?section=organising">Organising Structure</a>
+        <a href="?section=features">Key Features</a>
+    </div>
+</div>
 """, unsafe_allow_html=True)
 
-# ---- HERO SECTION ----
-st.markdown('<div class="main-title">KULLHAD ECONOMY FESTIVAL</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Reclaiming Roots, Reinventing Futures</div>', unsafe_allow_html=True)
+# Detect which section to show based on URL param
+query_params = st.experimental_get_query_params()
+section = query_params.get("section", ["home"])[0]
 
-# Navigation (simulated nav buttons)
-nav = st.columns(3)
-if nav[0].button("About"):
-    section = "about"
-elif nav[1].button("Organising Structure"):
-    section = "organising"
-elif nav[2].button("Key Features"):
-    section = "features"
-else:
-    section = "home"
+# Hero section (still at top)
+if section == "home":
+    st.markdown("# 🌾 KULLHAD ECONOMY FESTIVAL")
+    st.markdown("### Reclaiming Roots, Reinventing Futures")
 
-# ---- SECTION: ABOUT ----
+# ABOUT SECTION
 if section == "about":
     st.header("About the Festival")
     st.write("""
@@ -67,13 +62,13 @@ if section == "about":
     """)
     st.subheader("Objectives")
     st.markdown("""
-    - To promote the core philosophy of the Kullhad Economy  
-    - To provide a platform for community entrepreneurship  
-    - To inspire students to reconnect technology with tradition  
-    - To amplify rural voices and place-based models  
+    - Promote the core philosophy of the Kullhad Economy  
+    - Provide a platform for community entrepreneurship  
+    - Reconnect students with tradition and sustainability  
+    - Amplify rural voices and craft-based models  
     """)
 
-# ---- SECTION: ORGANISING STRUCTURE ----
+# ORGANISING STRUCTURE
 elif section == "organising":
     st.header("Organising Committee")
     st.markdown("""
@@ -89,23 +84,22 @@ elif section == "organising":
     - Prof. Gautam Desiraju  
     """)
 
-# ---- SECTION: KEY FEATURES ----
+# KEY FEATURES
 elif section == "features":
     st.header("Festival Highlights")
     with st.expander("🎪 Marketplace Stalls"):
-        st.write("50+ curated stalls featuring artisans, farmers, SHGs, local food producers, and innovators.")
+        st.write("50+ curated stalls featuring artisans, farmers, SHGs, and local food innovators.")
     with st.expander("🎭 Cultural Performances"):
-        st.write("Folk and classical fusion performances by regional artists and renowned contributors.")
+        st.write("Folk and classical fusion acts from Himachal and beyond.")
     with st.expander("🗣️ KFN Talks"):
-        st.write("TED-style talks by local entrepreneurs and cultural figures: 'Real Stories, Real Voices'")
+        st.write("'Real Stories, Real Voices' — inspiring TED-style talks from the Kamand Valley.")
     with st.expander("🤝 Community Participation"):
-        st.write("5,000+ locals, including students, SHGs, panchayats, and more.")
-    with st.expander("🎤 Dignitaries and Special Guests"):
-        st.write("Notable figures from sustainability, traditional knowledge, and policy.")
+        st.write("Thousands of local students, women groups, and leaders expected.")
+    with st.expander("🎤 Dignitaries and Guests"):
+        st.write("National icons from ecology, innovation, and culture.")
 
-# ---- FOOTER ----
-st.markdown('<div class="footer">Made with ❤️ at IIT Mandi | Why IIT Mandi? See below.</div>', unsafe_allow_html=True)
-
+# Footer
+st.markdown("---")
 st.subheader("Why IIT Mandi?")
 st.write("""
 IIT Mandi lies at a unique confluence of culture, consciousness, and capability...
@@ -113,6 +107,5 @@ IIT Mandi lies at a unique confluence of culture, consciousness, and capability.
 
 st.subheader("💬 Share your thoughts")
 review = st.text_area("Leave a review or message:")
-
 if st.button("Submit Review"):
     st.success("✅ Thank you for your feedback!")
